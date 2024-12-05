@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PS.MoneyMate.Infrastructure\PS.MoneyMate.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
@@ -22,6 +18,10 @@
     <Folder Include="Common\Interfaces\Persistence\Base\" />
     <Folder Include="CQRS\" />
     <Folder Include="Mapping\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PS.MoneyMate.Domain\PS.MoneyMate.Domain.csproj" />
   </ItemGroup>
 
 </Project>
