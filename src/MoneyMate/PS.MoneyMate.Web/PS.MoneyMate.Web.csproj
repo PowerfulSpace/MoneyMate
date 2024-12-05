@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PS.MoneyMate.Application\PS.MoneyMate.Application.csproj" />
+    <ProjectReference Include="..\PS.MoneyMate.Infrastructure\PS.MoneyMate.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
