@@ -1,9 +1,12 @@
 ﻿namespace PS.MoneyMate.Domain.Entities
 {
+    // Сущность валюты
     public class Currency
     {
-        public string Code { get; set; }= null!; // Код валюты, например, USD, EUR.
-        public string Name { get; set; } = null!; // Название валюты, например, "Доллар США".
-        public string Symbol { get; set; } = null!; // Символ валюты, например, "$".
+        public Guid Id { get; set; } = Guid.NewGuid(); // Уникальный идентификатор
+        public string Code { get; set; } = string.Empty; // Код валюты (например, USD)
+        public string Name { get; set; } = string.Empty; // Название валюты (например, "United States Dollar")
+        public string Symbol { get; set; } = string.Empty; // Символ валюты (например, "$")
+        public bool IsActive { get; set; } = true; // Флаг активности
     }
 }

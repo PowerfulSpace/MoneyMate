@@ -1,10 +1,10 @@
-﻿using PS.MoneyMate.Domain.Entities;
+﻿using PS.MoneyMate.Application.Common.Interfaces.Persistence.Base;
+using PS.MoneyMate.Domain.Entities;
 
 namespace PS.MoneyMate.Application.Common.Interfaces.Persistence
 {
-    public interface IExchangeRateRepository
+    public interface IExchangeRateRepository : ICrudRepository<ExchangeRate>
     {
-        Task<ExchangeRate> GetRateAsync(string fromCurrency, string toCurrency); // Получение курса обмена.
-        Task AddOrUpdateRateAsync(ExchangeRate exchangeRate); // Добавление или обновление курса.
+        Task<ExchangeRate?> GetRateAsync(Guid fromCurrencyId, Guid toCurrencyId); // Получить курс для пары валют
     }
 }

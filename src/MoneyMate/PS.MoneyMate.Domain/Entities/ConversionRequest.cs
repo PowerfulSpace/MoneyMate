@@ -1,10 +1,13 @@
 ﻿namespace PS.MoneyMate.Domain.Entities
 {
-    internal class ConversionRequest
+    // Сущность запроса конверсии
+    public class ConversionRequest
     {
-        public string FromCurrency { get; set; } = null!; // Исходная валюта.
-        public string ToCurrency { get; set; } = null!; // Целевая валюта.
-        public decimal Amount { get; set; } // Сумма для конвертации.
-        public DateTime RequestedAt { get; set; } // Время запроса.
+        public Guid Id { get; set; } = Guid.NewGuid(); // Уникальный идентификатор
+        public Guid FromCurrencyId { get; set; } // Валюта, из которой конвертируем
+        public Guid ToCurrencyId { get; set; } // Валюта, в которую конвертируем
+        public decimal Amount { get; set; } // Сумма, которую конвертируем
+        public decimal ConvertedAmount { get; set; } // Результат конвертации
+        public DateTime ConversionDate { get; set; } = DateTime.UtcNow; // Дата выполнения конверсии
     }
 }

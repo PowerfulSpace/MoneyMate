@@ -1,11 +1,12 @@
 ﻿namespace PS.MoneyMate.Domain.Entities
 {
+    // Сущность курса обмена
     public class ExchangeRate
     {
-        public string FromCurrency { get; set; } = null!; // Исходная валюта (например, USD).
-        public string ToCurrency { get; set; } = null!; // Целевая валюта (например, EUR).
-        public decimal Rate { get; set; } // Курс обмена.
-
-        public DateTime RetrievedAt { get; set; } // Дата и время получения курса.
+        public Guid Id { get; set; } = Guid.NewGuid(); // Уникальный идентификатор
+        public Guid FromCurrencyId { get; set; } // Валюта, из которой конвертируем
+        public Guid ToCurrencyId { get; set; } // Валюта, в которую конвертируем
+        public decimal Rate { get; set; } // Курс обмена
+        public DateTime LastUpdated { get; set; } = DateTime.UtcNow; // Последнее обновление курса
     }
 }
