@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="Common\Interfaces\Persistence\Base\" />
     <Folder Include="CQRS\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
