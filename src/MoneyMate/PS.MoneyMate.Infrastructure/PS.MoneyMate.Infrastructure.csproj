@@ -28,4 +28,10 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+    <Folder Include="Persistence\Configurations\" />
+    <Folder Include="Persistence\Repositories\" />
+  </ItemGroup>
+
 </Project>

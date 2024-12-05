@@ -17,4 +17,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Behaviors\" />
+    <Folder Include="Common\Interfaces\Persistence\Base\" />
+    <Folder Include="CQRS\" />
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+
 </Project>
