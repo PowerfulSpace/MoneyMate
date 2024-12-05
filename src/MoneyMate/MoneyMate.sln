@@ -7,6 +7,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AA237B50-548
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.MoneyMate.Web", "PS.MoneyMate.Web\PS.MoneyMate.Web.csproj", "{31229B6D-DAAB-4583-A03B-2C7BE8311E5F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{62A68D8D-48FE-485A-A598-AAEC237DBA5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A5FF3CD1-86B1-4545-A7E4-5FA8B595A124}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9E6826E2-299C-4CE2-AD0F-614496185B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.MoneyMate.Application", "PS.MoneyMate.Application\PS.MoneyMate.Application.csproj", "{3E8604EB-530D-4A01-9FD7-8A31769031E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.MoneyMate.Domain", "PS.MoneyMate.Domain\PS.MoneyMate.Domain.csproj", "{1462F256-E834-4115-BC9C-E58FF9ED6A52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.MoneyMate.Infrastructure", "PS.MoneyMate.Infrastructure\PS.MoneyMate.Infrastructure.csproj", "{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +29,27 @@ Global
 		{31229B6D-DAAB-4583-A03B-2C7BE8311E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31229B6D-DAAB-4583-A03B-2C7BE8311E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31229B6D-DAAB-4583-A03B-2C7BE8311E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8604EB-530D-4A01-9FD7-8A31769031E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8604EB-530D-4A01-9FD7-8A31769031E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8604EB-530D-4A01-9FD7-8A31769031E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8604EB-530D-4A01-9FD7-8A31769031E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1462F256-E834-4115-BC9C-E58FF9ED6A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1462F256-E834-4115-BC9C-E58FF9ED6A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1462F256-E834-4115-BC9C-E58FF9ED6A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1462F256-E834-4115-BC9C-E58FF9ED6A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{31229B6D-DAAB-4583-A03B-2C7BE8311E5F} = {AA237B50-548D-4197-8BEA-30820044D95B}
+		{3E8604EB-530D-4A01-9FD7-8A31769031E0} = {A5FF3CD1-86B1-4545-A7E4-5FA8B595A124}
+		{1462F256-E834-4115-BC9C-E58FF9ED6A52} = {62A68D8D-48FE-485A-A598-AAEC237DBA5F}
+		{2A4A320A-E69C-46B2-8626-FCD26CC7D0AB} = {9E6826E2-299C-4CE2-AD0F-614496185B82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D276CBC-2802-40D2-AC28-00E8BA56ECA4}
