@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using PS.MoneyMate.Application.Behaviors;
 using System.Reflection;
 
 namespace PS.MoneyMate.Application
@@ -24,8 +25,8 @@ namespace PS.MoneyMate.Application
 
         private static IServiceCollection AddValidationConfiguration(this IServiceCollection services)
         {
-            //services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }
     }
