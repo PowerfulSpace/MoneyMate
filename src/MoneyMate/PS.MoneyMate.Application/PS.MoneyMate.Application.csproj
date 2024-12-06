@@ -14,7 +14,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\" />
+    <Folder Include="CQRS\ConversionRequests\Commands\CreateConversionRequest\" />
+    <Folder Include="CQRS\ConversionRequests\Commands\UpdateConversionRequest\" />
+    <Folder Include="CQRS\ConversionRequests\Commands\DeleteConversionRequest\" />
+    <Folder Include="CQRS\ConversionRequests\Queries\GetConversionRequestById\" />
+    <Folder Include="CQRS\ConversionRequests\Queries\GetAllConversionRequests\" />
+    <Folder Include="CQRS\ConversionRequests\Queries\GetConversionRequestsByDateRange\" />
+    <Folder Include="CQRS\Currencies\Commands\CreateCurrency\" />
+    <Folder Include="CQRS\Currencies\Commands\UpdateCurrency\" />
+    <Folder Include="CQRS\Currencies\Commands\DeleteCurrency\" />
+    <Folder Include="CQRS\Currencies\Queries\GetCurrencyById\" />
+    <Folder Include="CQRS\Currencies\Queries\GetAllCurrencies\" />
+    <Folder Include="CQRS\Currencies\Queries\GetCurrenciesByCode\" />
+    <Folder Include="CQRS\ExchangeRates\Commands\CreateExchangeRate\" />
+    <Folder Include="CQRS\ExchangeRates\Commands\UpdateExchangeRate\" />
+    <Folder Include="CQRS\ExchangeRates\Commands\DeleteExchangeRate\" />
+    <Folder Include="CQRS\ExchangeRates\Queries\GetExchangeRateById\" />
+    <Folder Include="CQRS\ExchangeRates\Queries\GetAllExchangeRates\" />
+    <Folder Include="CQRS\ExchangeRates\Queries\GetExchangeRateByCurrencyPair\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
 
