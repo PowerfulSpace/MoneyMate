@@ -1,4 +1,7 @@
 ﻿using Mapster;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.CreateConversionRequest;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.UpdateConversionRequest;
+using PS.MoneyMate.Domain.Entities;
 
 namespace PS.MoneyMate.Application.Mapping
 {
@@ -6,7 +9,11 @@ namespace PS.MoneyMate.Application.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            throw new NotImplementedException();
+            config.NewConfig<CreateConversionRequestCommand, ConversionRequest>()
+               .IgnoreNullValues(true);
+
+            config.NewConfig<UpdateConversionRequestCommand, ConversionRequest>()
+               .IgnoreNullValues(true);
         }
     }
 }

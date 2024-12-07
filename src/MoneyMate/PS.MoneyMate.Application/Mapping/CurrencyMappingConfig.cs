@@ -1,4 +1,7 @@
 ﻿using Mapster;
+using PS.MoneyMate.Application.CQRS.Currencies.Commands.CreateCurrency;
+using PS.MoneyMate.Application.CQRS.Currencies.Commands.UpdateCurrency;
+using PS.MoneyMate.Domain.Entities;
 
 namespace PS.MoneyMate.Application.Mapping
 {
@@ -6,7 +9,11 @@ namespace PS.MoneyMate.Application.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            throw new NotImplementedException();
+            config.NewConfig<CreateCurrencyCommand, Currency>()
+                .IgnoreNullValues(true);
+
+            config.NewConfig<UpdateCurrencyCommand, Currency>()
+               .IgnoreNullValues(true);
         }
     }
 }
