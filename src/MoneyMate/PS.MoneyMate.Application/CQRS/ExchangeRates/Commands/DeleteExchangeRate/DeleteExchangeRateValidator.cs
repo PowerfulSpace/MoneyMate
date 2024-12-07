@@ -1,6 +1,12 @@
-﻿namespace PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.DeleteExchangeRate
+﻿using FluentValidation;
+
+namespace PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.DeleteExchangeRate
 {
-    public class DeleteExchangeRateValidator
+    public class DeleteExchangeRateValidator : AbstractValidator<DeleteExchangeRateCommand>
     {
+        public DeleteExchangeRateValidator()
+        {
+            RuleFor(x => x.Id).NotEmpty().WithMessage("ID is required.");
+        }
     }
 }

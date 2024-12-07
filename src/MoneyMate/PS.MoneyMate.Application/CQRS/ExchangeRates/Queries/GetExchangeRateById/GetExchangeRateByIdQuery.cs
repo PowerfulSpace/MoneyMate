@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using PS.MoneyMate.Domain.Entities;
 
 namespace PS.MoneyMate.Application.CQRS.ExchangeRates.Queries.GetExchangeRateById
 {
-    public class GetExchangeRateByIdQuery
+    public class GetExchangeRateByIdQuery : IRequest<ExchangeRate>
     {
+        public Guid Id { get; set; }
     }
 }

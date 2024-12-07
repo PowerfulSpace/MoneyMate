@@ -1,6 +1,13 @@
-﻿namespace PS.MoneyMate.Application.CQRS.ExchangeRates.Queries.GetExchangeRateByCurrencyPair
+﻿using FluentValidation;
+
+namespace PS.MoneyMate.Application.CQRS.ExchangeRates.Queries.GetExchangeRateByCurrencyPair
 {
-    public class GetExchangeRateByCurrencyPairValidator
+    public class GetExchangeRateByCurrencyPairValidator : AbstractValidator<GetExchangeRateByCurrencyPairQuery>
     {
+        public GetExchangeRateByCurrencyPairValidator()
+        {
+            RuleFor(x => x.FromCurrencyId).NotEmpty().WithMessage("FromCurrencyId is required.");
+            RuleFor(x => x.ToCurrencyId).NotEmpty().WithMessage("ToCurrencyId is required.");
+        }
     }
 }
