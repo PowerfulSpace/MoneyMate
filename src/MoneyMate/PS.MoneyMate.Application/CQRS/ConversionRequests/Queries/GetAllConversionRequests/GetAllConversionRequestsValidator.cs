@@ -1,6 +1,8 @@
-﻿namespace PS.MoneyMate.Application.CQRS.ConversionRequests.Queries.GetAllConversionRequests
+﻿using FluentValidation;
+
+namespace PS.MoneyMate.Application.CQRS.ConversionRequests.Queries.GetAllConversionRequests
 {
-    public class GetAllConversionRequestsValidator
+    public class GetAllConversionRequestsValidator : AbstractValidator<GetAllConversionRequestsQuery>
     {
     }
 }
