@@ -1,4 +1,7 @@
 ﻿using Mapster;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.CreateExchangeRate;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.UpdateExchangeRate;
+using PS.MoneyMate.Web.Models;
 
 namespace PS.MoneyMate.Web.Mapping
 {
@@ -6,7 +9,11 @@ namespace PS.MoneyMate.Web.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            throw new NotImplementedException();
+            config.NewConfig<CreateExchangeRateViewModel, CreateExchangeRateCommand>()
+              .IgnoreNullValues(true);
+
+            config.NewConfig<UpdateExchangeRateViewModel, UpdateExchangeRateCommand>()
+                .IgnoreNullValues(true);
         }
     }
 }
