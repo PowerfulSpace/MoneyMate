@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.CreateConversionRequest;
 using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.UpdateConversionRequest;
+using PS.MoneyMate.Domain.Entities;
 using PS.MoneyMate.Web.Models.ConversionRequest;
 
 namespace PS.MoneyMate.Web.Mapping
@@ -14,6 +15,9 @@ namespace PS.MoneyMate.Web.Mapping
 
             config.NewConfig<UpdateConversionRequestViewModel, UpdateConversionRequestCommand>()
                 .IgnoreNullValues(true);
+
+            config.NewConfig<ConversionRequest, ConversionRequestViewModel>()
+               .IgnoreNullValues(true);
         }
     }
 }
