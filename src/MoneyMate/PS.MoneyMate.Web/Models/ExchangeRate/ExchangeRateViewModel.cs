@@ -1,14 +1,13 @@
-﻿namespace PS.MoneyMate.Web.Models.ConversionRequest
+﻿namespace PS.MoneyMate.Web.Models.ExchangeRate
 {
-    public class ConversionRequestViewModel
+    public class ExchangeRateViewModel
     {
         public Guid Id { get; set; }
         public Guid FromCurrencyId { get; set; }
         public string FromCurrencyCode { get; set; } = string.Empty;
         public Guid ToCurrencyId { get; set; }
         public string ToCurrencyCode { get; set; } = string.Empty;
-        public decimal Amount { get; set; }
-        public decimal ConvertedAmount { get; set; }
-        public DateTime ConversionDate { get; set; }
+        public decimal Rate { get; set; }
+        public DateTime LastUpdated { get; set; }
     }
 }
