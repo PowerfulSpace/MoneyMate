@@ -7,7 +7,7 @@ using PS.MoneyMate.Application.CQRS.Currencies.Commands.DeleteCurrency;
 using PS.MoneyMate.Application.CQRS.Currencies.Commands.UpdateCurrency;
 using PS.MoneyMate.Application.CQRS.Currencies.Queries.GetAllCurrencies;
 using PS.MoneyMate.Application.CQRS.Currencies.Queries.GetCurrencyById;
-using PS.MoneyMate.Web.Models;
+using PS.MoneyMate.Web.Models.Currency;
 
 namespace PS.MoneyMate.Web.Controllers
 {

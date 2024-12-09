@@ -1,4 +1,4 @@
-﻿namespace PS.MoneyMate.Web.Models
+﻿namespace PS.MoneyMate.Web.Models.Currency
 {
     public class UpdateCurrencyViewModel
     {

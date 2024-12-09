@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using PS.MoneyMate.Application.CQRS.Currencies.Commands.CreateCurrency;
 using PS.MoneyMate.Application.CQRS.Currencies.Commands.UpdateCurrency;
-using PS.MoneyMate.Web.Models;
+using PS.MoneyMate.Web.Models.Currency;
 
 namespace PS.MoneyMate.Web.Mapping
 {

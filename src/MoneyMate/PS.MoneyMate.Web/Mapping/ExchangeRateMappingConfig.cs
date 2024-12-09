@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.CreateExchangeRate;
 using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.UpdateExchangeRate;
-using PS.MoneyMate.Web.Models;
+using PS.MoneyMate.Web.Models.ExchangeRate;
 
 namespace PS.MoneyMate.Web.Mapping
 {

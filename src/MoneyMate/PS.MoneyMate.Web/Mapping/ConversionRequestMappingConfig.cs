@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.CreateConversionRequest;
 using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.UpdateConversionRequest;
-using PS.MoneyMate.Web.Models;
+using PS.MoneyMate.Web.Models.ConversionRequest;
 
 namespace PS.MoneyMate.Web.Mapping
 {
