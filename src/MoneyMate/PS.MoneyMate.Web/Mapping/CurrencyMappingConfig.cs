@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using PS.MoneyMate.Application.CQRS.Currencies.Commands.CreateCurrency;
 using PS.MoneyMate.Application.CQRS.Currencies.Commands.UpdateCurrency;
+using PS.MoneyMate.Domain.Entities;
 using PS.MoneyMate.Web.Models.Currency;
 
 namespace PS.MoneyMate.Web.Mapping
@@ -13,6 +14,9 @@ namespace PS.MoneyMate.Web.Mapping
                 .IgnoreNullValues(true);
 
             config.NewConfig<UpdateCurrencyViewModel, UpdateCurrencyCommand>()
+                .IgnoreNullValues(true);
+
+            config.NewConfig<Currency, CurrencyViewModel>()
                 .IgnoreNullValues(true);
         }
     }
