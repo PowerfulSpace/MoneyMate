@@ -1,6 +1,13 @@
-﻿using MapsterMapper;
+﻿using Mapster;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.CreateConversionRequest;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.DeleteConversionRequest;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Commands.UpdateConversionRequest;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Queries.GetAllConversionRequests;
+using PS.MoneyMate.Application.CQRS.ConversionRequests.Queries.GetConversionRequestById;
+using PS.MoneyMate.Web.Models.ConversionRequest;
 
 namespace PS.MoneyMate.Web.Controllers
 {
@@ -14,9 +21,16 @@ namespace PS.MoneyMate.Web.Controllers
             _mediator = mediator;
             _mapper = mapper;
         }
-        public IActionResult Index()
+
+        // GET: /ConversionRequest
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var conversionRequests = await _mediator.Send(new GetAllConversionRequestsQuery());
+            var viewModel = conversionRequests.Adapt<IEnumerable<ConversionRequestViewModel>>();
+            return View(viewModel);
         }
+
+      
     }
 }
