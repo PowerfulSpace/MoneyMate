@@ -43,5 +43,27 @@ namespace PS.MoneyMate.Web.Controllers
             return View(viewModel);
         }
 
+        // GET: /ExchangeRate/Create
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var viewModel = new CreateExchangeRateViewModel();
+            return View(viewModel);
+        }
+
+        // POST: /ExchangeRate/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateExchangeRateViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var command = model.Adapt<CreateExchangeRateCommand>();
+            var exchangeRateId = await _mediator.Send(command);
+            return RedirectToAction(nameof(Details), new { id = exchangeRateId });
+        }
+
+       
     }
 }
