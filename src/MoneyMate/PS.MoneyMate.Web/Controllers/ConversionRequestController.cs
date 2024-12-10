@@ -64,6 +64,31 @@ namespace PS.MoneyMate.Web.Controllers
             return RedirectToAction(nameof(Details), new { id = conversionRequestId });
         }
 
+        // GET: /ConversionRequest/Edit/{id}
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var conversionRequest = await _mediator.Send(new GetConversionRequestByIdQuery { Id = id });
+            if (conversionRequest == null)
+                return NotFound();
+
+            var viewModel = conversionRequest.Adapt<UpdateConversionRequestViewModel>();
+            return View(viewModel);
+        }
+
+        // POST: /ConversionRequest/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(UpdateConversionRequestViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var command = model.Adapt<UpdateConversionRequestCommand>();
+            await _mediator.Send(command);
+            return RedirectToAction(nameof(Details), new { id = model.Id });
+        }
+
         
     }
 }
