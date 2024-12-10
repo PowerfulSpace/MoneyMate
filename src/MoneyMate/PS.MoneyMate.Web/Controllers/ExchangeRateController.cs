@@ -31,6 +31,17 @@ namespace PS.MoneyMate.Web.Controllers
             return View(viewModel);
         }
 
-       
+        // GET: /ExchangeRate/Details/{id}
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var exchangeRate = await _mediator.Send(new GetExchangeRateByIdQuery { Id = id });
+            if (exchangeRate == null)
+                return NotFound();
+
+            var viewModel = exchangeRate.Adapt<ExchangeRateViewModel>();
+            return View(viewModel);
+        }
+
     }
 }
