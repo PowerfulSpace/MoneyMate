@@ -64,6 +64,31 @@ namespace PS.MoneyMate.Web.Controllers
             return RedirectToAction(nameof(Details), new { id = exchangeRateId });
         }
 
+        // GET: /ExchangeRate/Edit/{id}
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var exchangeRate = await _mediator.Send(new GetExchangeRateByIdQuery { Id = id });
+            if (exchangeRate == null)
+                return NotFound();
+
+            var viewModel = exchangeRate.Adapt<UpdateExchangeRateViewModel>();
+            return View(viewModel);
+        }
+
+        // POST: /ExchangeRate/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(UpdateExchangeRateViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var command = model.Adapt<UpdateExchangeRateCommand>();
+            await _mediator.Send(command);
+            return RedirectToAction(nameof(Details), new { id = model.Id });
+        }
+
        
     }
 }
