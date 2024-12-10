@@ -31,6 +31,18 @@ namespace PS.MoneyMate.Web.Controllers
             return View(viewModel);
         }
 
+        // GET: /ConversionRequest/Details/{id}
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var conversionRequest = await _mediator.Send(new GetConversionRequestByIdQuery { Id = id });
+            if (conversionRequest == null)
+                return NotFound();
+
+            var viewModel = conversionRequest.Adapt<ConversionRequestViewModel>();
+            return View(viewModel);
+        }
+
       
     }
 }
