@@ -43,6 +43,27 @@ namespace PS.MoneyMate.Web.Controllers
             return View(viewModel);
         }
 
-      
+        // GET: /ConversionRequest/Create
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var viewModel = new CreateConversionRequestViewModel();
+            return View(viewModel);
+        }
+
+        // POST: /ConversionRequest/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateConversionRequestViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var command = model.Adapt<CreateConversionRequestCommand>();
+            var conversionRequestId = await _mediator.Send(command);
+            return RedirectToAction(nameof(Details), new { id = conversionRequestId });
+        }
+
+        
     }
 }
