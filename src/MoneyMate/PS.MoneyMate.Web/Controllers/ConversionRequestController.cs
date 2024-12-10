@@ -89,6 +89,13 @@ namespace PS.MoneyMate.Web.Controllers
             return RedirectToAction(nameof(Details), new { id = model.Id });
         }
 
-        
+        // POST: /ConversionRequest/Delete/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _mediator.Send(new DeleteConversionRequestCommand { Id = id });
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
