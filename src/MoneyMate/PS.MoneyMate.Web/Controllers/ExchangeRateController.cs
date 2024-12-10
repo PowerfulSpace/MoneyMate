@@ -1,6 +1,13 @@
-﻿using MapsterMapper;
+﻿using Mapster;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.CreateExchangeRate;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.DeleteExchangeRate;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Commands.UpdateExchangeRate;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Queries.GetAllExchangeRates;
+using PS.MoneyMate.Application.CQRS.ExchangeRates.Queries.GetExchangeRateById;
+using PS.MoneyMate.Web.Models.ExchangeRate;
 
 namespace PS.MoneyMate.Web.Controllers
 {
@@ -14,9 +21,16 @@ namespace PS.MoneyMate.Web.Controllers
             _mediator = mediator;
             _mapper = mapper;
         }
-        public IActionResult Index()
+
+        // GET: /ExchangeRate
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var exchangeRates = await _mediator.Send(new GetAllExchangeRatesQuery());
+            var viewModel = exchangeRates.Adapt<IEnumerable<ExchangeRateViewModel>>();
+            return View(viewModel);
         }
+
+       
     }
 }
