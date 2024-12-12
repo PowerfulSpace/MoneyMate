@@ -1,1 +1,35 @@
-﻿
+﻿@model IEnumerable<CurrencyViewModel>
+
+@{
+    ViewData["Title"] = "Currencies";
+}
+
+<h2>Currencies</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Is Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var currency in Model)
+        {
+            <tr>
+                <td>@currency.Code</td>
+                <td>@currency.Name</td>
+                <td>@currency.Symbol</td>
+                <td>@currency.IsActive</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@currency.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@currency.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@currency.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
